@@ -18,12 +18,12 @@
   </div>
 </template>
 
-
 <script setup>
-import { ref, watch, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { ref, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
+const router = useRouter();
 const token = ref(localStorage.getItem('token'));
 const isAdmin = ref(localStorage.getItem('isAdmin'));
 
@@ -34,9 +34,17 @@ watch(() => route.path, () => {
 });
 
 const logout = () => {
+  // Clear localStorage
   localStorage.clear();
+  
+  // Update reactive refs
   token.value = null;
   isAdmin.value = null;
-  window.location.href = '/login';
+  
+  // Use Vue Router instead of window.location
+  router.push('/login').catch(err => {
+    // Handle navigation errors gracefully
+    console.error('Navigation error:', err);
+  });
 };
 </script>
