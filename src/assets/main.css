@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  --neon-pink: #ff00ff;
+  --neon-blue: #00ffff;
+  --neon-yellow: #ffff00;
+  --dark-bg: #0a0a0a;
+}
+
+body {
+  background-color: var(--dark-bg);
+  background-image: 
+    linear-gradient(rgba(18, 18, 18, 0.9) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(18, 18, 18, 0.9) 2px, transparent 2px);
+  background-size: 30px 30px;
+  color: #fff;
+  font-family: 'VT323', monospace;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* The wrapper that prevents blank screens */
+.retro-app-wrapper {
+  max-width: 1100px;
+  margin: 20px auto;
+  border: 4px solid #fff;
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 10px 10px 0px var(--neon-pink);
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: var(--neon-yellow);
+  text-transform: uppercase;
+  text-shadow: 3px 3px var(--neon-pink);
+  letter-spacing: 2px;
+}
+
+button, .btn {
+  background: var(--neon-blue);
+  color: #000;
+  border: 3px solid #fff;
+  padding: 10px 20px;
+  font-family: 'VT323', monospace;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px var(--neon-pink);
+  text-transform: uppercase;
+  margin: 10px 5px;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: var(--neon-pink);
+  box-shadow: 4px 4px 0px var(--neon-blue);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+input, textarea {
+  background: #1a1a1a;
+  border: 2px solid var(--neon-blue);
+  color: var(--neon-yellow);
+  padding: 12px;
+  font-size: 1.2rem;
+  font-family: 'VT323', monospace;
+  width: calc(100% - 30px);
+  margin-bottom: 15px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 10px var(--neon-pink);
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+thead {
+  color: var(--neon-yellow);
+  text-transform: uppercase;
+}
+
+th {
+  border-bottom: 2px solid #fff;
+  text-align: left;
+  padding: 10px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+tr:hover {
+  background: rgba(255, 0, 255, 0.1);
+}
+
+/* Movie Card Styling */
+.movie-card {
+  border: 2px solid var(--neon-blue);
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 5px 5px 0px var(--neon-pink);
+  transition: all 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 0px var(--neon-yellow);
+}
+
+.movie-card h3 {
+  margin-top: 0;
+  color: var(--neon-yellow);
+  text-shadow: 2px 2px var(--neon-pink);
+}
+
+.movie-card p {
+  color: var(--neon-blue);
+  font-size: 1.1rem;
+}
+
+/* Admin Container */
+.admin-container {
+  padding: 20px;
+}
+
+.admin-container input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  table {
+    font-size: 1rem;
+  }
+  
+  th, td {
+    padding: 5px;
+  }
+  
+  button {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  border: 2px solid var(--neon-pink);
+  padding: 30px;
+  background: #000;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 30px var(--neon-pink);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-blue);
+  border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-pink);
+}
